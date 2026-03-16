@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D400000001 /* DockerSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000001 /* DockerSwiftUIApp.swift */; };
+		A1B2C3D400000040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000040 /* AppDelegate.swift */; };
+		A1B2C3D400000002 /* DockerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000002 /* DockerContainer.swift */; };
+		A1B2C3D400000003 /* DockerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000003 /* DockerImage.swift */; };
+		A1B2C3D400000004 /* DockerVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000004 /* DockerVolume.swift */; };
+		A1B2C3D400000005 /* DockerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000005 /* DockerNetwork.swift */; };
+		A1B2C3D400000006 /* ContainerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000006 /* ContainerStats.swift */; };
+		A1B2C3D400000007 /* DockerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000007 /* DockerEvent.swift */; };
+		A1B2C3D400000008 /* DockerSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000008 /* DockerSocket.swift */; };
+		A1B2C3D400000009 /* DockerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000009 /* DockerAPI.swift */; };
+		A1B2C3D40000000A /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D50000000A /* LogParser.swift */; };
+		A1B2C3D40000000B /* DockerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D50000000B /* DockerClient.swift */; };
+		A1B2C3D40000000C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D50000000C /* ContentView.swift */; };
+		A1B2C3D40000000D /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D50000000D /* Sidebar.swift */; };
+		A1B2C3D40000000E /* ContainerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D50000000E /* ContainerListView.swift */; };
+		A1B2C3D40000000F /* ContainerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D50000000F /* ContainerDetailView.swift */; };
+		A1B2C3D400000010 /* ContainerLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000010 /* ContainerLogView.swift */; };
+		A1B2C3D400000011 /* ContainerStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000011 /* ContainerStatsView.swift */; };
+		A1B2C3D400000012 /* ComposeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000012 /* ComposeStackView.swift */; };
+		A1B2C3D400000013 /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000013 /* ImageListView.swift */; };
+		A1B2C3D400000014 /* VolumeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000014 /* VolumeListView.swift */; };
+		A1B2C3D400000015 /* NetworkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000015 /* NetworkListView.swift */; };
+		A1B2C3D400000020 /* SocketPathResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000020 /* SocketPathResolver.swift */; };
+		A1B2C3D400000016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000016 /* Assets.xcassets */; };
+		A1B2C3D400000017 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000017 /* Network.framework */; };
+		A1B2C3D400000030 /* DockerExecTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000030 /* DockerExecTransport.swift */; };
+		A1B2C3D400000031 /* TerminalNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000031 /* TerminalNSView.swift */; };
+		A1B2C3D400000032 /* ContainerConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000032 /* ContainerConsoleView.swift */; };
+		A1B2C3D400000033 /* SpecttyTerminal in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3DF00000030 /* SpecttyTerminal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D500000001 /* DockerSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerSwiftUIApp.swift; sourceTree = "<group>"; };
+		A1B2C3D500000040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1B2C3D500000002 /* DockerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerContainer.swift; sourceTree = "<group>"; };
+		A1B2C3D500000003 /* DockerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerImage.swift; sourceTree = "<group>"; };
+		A1B2C3D500000004 /* DockerVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerVolume.swift; sourceTree = "<group>"; };
+		A1B2C3D500000005 /* DockerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerNetwork.swift; sourceTree = "<group>"; };
+		A1B2C3D500000006 /* ContainerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStats.swift; sourceTree = "<group>"; };
+		A1B2C3D500000007 /* DockerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerEvent.swift; sourceTree = "<group>"; };
+		A1B2C3D500000008 /* DockerSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerSocket.swift; sourceTree = "<group>"; };
+		A1B2C3D500000009 /* DockerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerAPI.swift; sourceTree = "<group>"; };
+		A1B2C3D50000000A /* LogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
+		A1B2C3D50000000B /* DockerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerClient.swift; sourceTree = "<group>"; };
+		A1B2C3D50000000C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A1B2C3D50000000D /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		A1B2C3D50000000E /* ContainerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerListView.swift; sourceTree = "<group>"; };
+		A1B2C3D50000000F /* ContainerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000010 /* ContainerLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerLogView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000011 /* ContainerStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStatsView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000012 /* ComposeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeStackView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000013 /* ImageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000014 /* VolumeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeListView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000015 /* NetworkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkListView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D500000017 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		A1B2C3D500000020 /* SocketPathResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketPathResolver.swift; sourceTree = "<group>"; };
+		A1B2C3D500000018 /* DockerSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DockerSwiftUI.entitlements; sourceTree = "<group>"; };
+		A1B2C3D500000019 /* DockerSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DockerSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D500000030 /* DockerExecTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerExecTransport.swift; sourceTree = "<group>"; };
+		A1B2C3D500000031 /* TerminalNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalNSView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000032 /* ContainerConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConsoleView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D600000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D400000017 /* Network.framework in Frameworks */,
+				A1B2C3D400000033 /* SpecttyTerminal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D700000001 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D700000002 /* DockerSwiftUI */,
+				A1B2C3D700000010 /* Frameworks */,
+				A1B2C3D700000011 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000002 /* DockerSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000001 /* DockerSwiftUIApp.swift */,
+				A1B2C3D500000040 /* AppDelegate.swift */,
+				A1B2C3D500000018 /* DockerSwiftUI.entitlements */,
+				A1B2C3D500000016 /* Assets.xcassets */,
+				A1B2C3D700000003 /* Models */,
+				A1B2C3D700000004 /* Networking */,
+				A1B2C3D700000005 /* Utilities */,
+				A1B2C3D700000006 /* ViewModels */,
+				A1B2C3D700000007 /* Views */,
+				A1B2C3D700000030 /* Terminal */,
+			);
+			path = DockerSwiftUI;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000002 /* DockerContainer.swift */,
+				A1B2C3D500000003 /* DockerImage.swift */,
+				A1B2C3D500000004 /* DockerVolume.swift */,
+				A1B2C3D500000005 /* DockerNetwork.swift */,
+				A1B2C3D500000006 /* ContainerStats.swift */,
+				A1B2C3D500000007 /* DockerEvent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000004 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000008 /* DockerSocket.swift */,
+				A1B2C3D500000009 /* DockerAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000005 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D50000000A /* LogParser.swift */,
+				A1B2C3D500000020 /* SocketPathResolver.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000006 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D50000000B /* DockerClient.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D50000000C /* ContentView.swift */,
+				A1B2C3D50000000D /* Sidebar.swift */,
+				A1B2C3D700000008 /* Containers */,
+				A1B2C3D700000009 /* Compose */,
+				A1B2C3D70000000A /* Images */,
+				A1B2C3D70000000B /* Volumes */,
+				A1B2C3D70000000C /* Networks */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000008 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D50000000E /* ContainerListView.swift */,
+				A1B2C3D50000000F /* ContainerDetailView.swift */,
+				A1B2C3D500000010 /* ContainerLogView.swift */,
+				A1B2C3D500000011 /* ContainerStatsView.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000009 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000012 /* ComposeStackView.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		A1B2C3D70000000A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000013 /* ImageListView.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A1B2C3D70000000B /* Volumes */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000014 /* VolumeListView.swift */,
+			);
+			path = Volumes;
+			sourceTree = "<group>";
+		};
+		A1B2C3D70000000C /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000015 /* NetworkListView.swift */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000030 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000030 /* DockerExecTransport.swift */,
+				A1B2C3D500000031 /* TerminalNSView.swift */,
+				A1B2C3D500000032 /* ContainerConsoleView.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000010 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000017 /* Network.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1B2C3D700000011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D500000019 /* DockerSwiftUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D800000001 /* DockerSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3DA00000003 /* Build configuration list for PBXNativeTarget "DockerSwiftUI" */;
+			buildPhases = (
+				A1B2C3D900000001 /* Sources */,
+				A1B2C3D600000001 /* Frameworks */,
+				A1B2C3D900000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DockerSwiftUI;
+			packageProductDependencies = (
+				A1B2C3DF00000030 /* SpecttyTerminal */,
+			);
+			productName = DockerSwiftUI;
+			productReference = A1B2C3D500000019 /* DockerSwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3DB00000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A1B2C3D800000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3DA00000001 /* Build configuration list for PBXProject "DockerSwiftUI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3D700000001 /* Root */;
+			packageReferences = (
+				A1B2C3DE00000030 /* XCLocalSwiftPackageReference "Packages/SpecttyTerminal" */,
+			);
+			productRefGroup = A1B2C3D700000011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D800000001 /* DockerSwiftUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D900000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D400000016 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D900000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D400000001 /* DockerSwiftUIApp.swift in Sources */,
+				A1B2C3D400000002 /* DockerContainer.swift in Sources */,
+				A1B2C3D400000003 /* DockerImage.swift in Sources */,
+				A1B2C3D400000004 /* DockerVolume.swift in Sources */,
+				A1B2C3D400000005 /* DockerNetwork.swift in Sources */,
+				A1B2C3D400000006 /* ContainerStats.swift in Sources */,
+				A1B2C3D400000007 /* DockerEvent.swift in Sources */,
+				A1B2C3D400000008 /* DockerSocket.swift in Sources */,
+				A1B2C3D400000009 /* DockerAPI.swift in Sources */,
+				A1B2C3D40000000A /* LogParser.swift in Sources */,
+				A1B2C3D40000000B /* DockerClient.swift in Sources */,
+				A1B2C3D40000000C /* ContentView.swift in Sources */,
+				A1B2C3D40000000D /* Sidebar.swift in Sources */,
+				A1B2C3D40000000E /* ContainerListView.swift in Sources */,
+				A1B2C3D40000000F /* ContainerDetailView.swift in Sources */,
+				A1B2C3D400000010 /* ContainerLogView.swift in Sources */,
+				A1B2C3D400000011 /* ContainerStatsView.swift in Sources */,
+				A1B2C3D400000012 /* ComposeStackView.swift in Sources */,
+				A1B2C3D400000013 /* ImageListView.swift in Sources */,
+				A1B2C3D400000014 /* VolumeListView.swift in Sources */,
+				A1B2C3D400000015 /* NetworkListView.swift in Sources */,
+				A1B2C3D400000020 /* SocketPathResolver.swift in Sources */,
+				A1B2C3D400000040 /* AppDelegate.swift in Sources */,
+				A1B2C3D400000030 /* DockerExecTransport.swift in Sources */,
+				A1B2C3D400000031 /* TerminalNSView.swift in Sources */,
+				A1B2C3D400000032 /* ContainerConsoleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3DC00000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B2C3DC00000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A1B2C3DC00000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DockerSwiftUI/DockerSwiftUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dockerswiftui.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1B2C3DC00000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DockerSwiftUI/DockerSwiftUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dockerswiftui.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3DA00000001 /* Build configuration list for PBXProject "DockerSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3DC00000001 /* Debug */,
+				A1B2C3DC00000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3DA00000003 /* Build configuration list for PBXNativeTarget "DockerSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3DC00000003 /* Debug */,
+				A1B2C3DC00000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A1B2C3DE00000030 /* XCLocalSwiftPackageReference "Packages/SpecttyTerminal" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "Packages/SpecttyTerminal";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3DF00000030 /* SpecttyTerminal */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpecttyTerminal;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A1B2C3DB00000001 /* Project object */;
+}
