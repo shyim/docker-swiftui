@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A1B2C3D800000001"
-               BuildableName = "DockerSwiftUI.app"
-               BlueprintName = "DockerSwiftUI"
-               ReferencedContainer = "container:DockerSwiftUI.xcodeproj">
+               BuildableName = "Dockable.app"
+               BlueprintName = "Dockable"
+               ReferencedContainer = "container:Dockable.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,9 +37,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1B2C3D800000001"
-            BuildableName = "DockerSwiftUI.app"
-            BlueprintName = "DockerSwiftUI"
-            ReferencedContainer = "container:DockerSwiftUI.xcodeproj">
+            BuildableName = "Dockable.app"
+            BlueprintName = "Dockable"
+            ReferencedContainer = "container:Dockable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>

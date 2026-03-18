@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct DockerSwiftUIApp: App {
+struct DockableApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var client = DockerClient()
     @Environment(\.openWindow) private var openWindow

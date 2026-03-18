@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1B2C3D400000001 /* DockerSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000001 /* DockerSwiftUIApp.swift */; };
+		A1B2C3D400000001 /* DockableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000001 /* DockableApp.swift */; };
 		A1B2C3D400000040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000040 /* AppDelegate.swift */; };
 		A1B2C3D400000002 /* DockerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000002 /* DockerContainer.swift */; };
 		A1B2C3D400000003 /* DockerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000003 /* DockerImage.swift */; };
@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1B2C3D500000001 /* DockerSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerSwiftUIApp.swift; sourceTree = "<group>"; };
+		A1B2C3D500000001 /* DockableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockableApp.swift; sourceTree = "<group>"; };
 		A1B2C3D500000040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1B2C3D500000002 /* DockerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerContainer.swift; sourceTree = "<group>"; };
 		A1B2C3D500000003 /* DockerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerImage.swift; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		A1B2C3D500000016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B2C3D500000017 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
 		A1B2C3D500000020 /* SocketPathResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketPathResolver.swift; sourceTree = "<group>"; };
-		A1B2C3D500000018 /* DockerSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DockerSwiftUI.entitlements; sourceTree = "<group>"; };
-		A1B2C3D500000019 /* DockerSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DockerSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D500000018 /* Dockable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dockable.entitlements; sourceTree = "<group>"; };
+		A1B2C3D500000019 /* Dockable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dockable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D500000030 /* DockerExecTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerExecTransport.swift; sourceTree = "<group>"; };
 		A1B2C3D500000031 /* TerminalNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalNSView.swift; sourceTree = "<group>"; };
 		A1B2C3D500000032 /* ContainerConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConsoleView.swift; sourceTree = "<group>"; };
@@ -87,18 +87,18 @@
 		A1B2C3D700000001 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D700000002 /* DockerSwiftUI */,
+				A1B2C3D700000002 /* Dockable */,
 				A1B2C3D700000010 /* Frameworks */,
 				A1B2C3D700000011 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A1B2C3D700000002 /* DockerSwiftUI */ = {
+		A1B2C3D700000002 /* Dockable */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D500000001 /* DockerSwiftUIApp.swift */,
+				A1B2C3D500000001 /* DockableApp.swift */,
 				A1B2C3D500000040 /* AppDelegate.swift */,
-				A1B2C3D500000018 /* DockerSwiftUI.entitlements */,
+				A1B2C3D500000018 /* Dockable.entitlements */,
 				A1B2C3D500000016 /* Assets.xcassets */,
 				A1B2C3D700000003 /* Models */,
 				A1B2C3D700000004 /* Networking */,
@@ -107,7 +107,7 @@
 				A1B2C3D700000007 /* Views */,
 				A1B2C3D700000030 /* Terminal */,
 			);
-			path = DockerSwiftUI;
+			path = Dockable;
 			sourceTree = "<group>";
 		};
 		A1B2C3D700000003 /* Models */ = {
@@ -227,7 +227,7 @@
 		A1B2C3D700000011 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D500000019 /* DockerSwiftUI.app */,
+				A1B2C3D500000019 /* Dockable.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,9 +235,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1B2C3D800000001 /* DockerSwiftUI */ = {
+		A1B2C3D800000001 /* Dockable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1B2C3DA00000003 /* Build configuration list for PBXNativeTarget "DockerSwiftUI" */;
+			buildConfigurationList = A1B2C3DA00000003 /* Build configuration list for PBXNativeTarget "Dockable" */;
 			buildPhases = (
 				A1B2C3D900000001 /* Sources */,
 				A1B2C3D600000001 /* Frameworks */,
@@ -247,12 +247,12 @@
 			);
 			dependencies = (
 			);
-			name = DockerSwiftUI;
+			name = Dockable;
 			packageProductDependencies = (
 				A1B2C3DF00000030 /* SpecttyTerminal */,
 			);
-			productName = DockerSwiftUI;
-			productReference = A1B2C3D500000019 /* DockerSwiftUI.app */;
+			productName = Dockable;
+			productReference = A1B2C3D500000019 /* Dockable.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -270,7 +270,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A1B2C3DA00000001 /* Build configuration list for PBXProject "DockerSwiftUI" */;
+			buildConfigurationList = A1B2C3DA00000001 /* Build configuration list for PBXProject "Dockable" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -286,7 +286,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1B2C3D800000001 /* DockerSwiftUI */,
+				A1B2C3D800000001 /* Dockable */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1B2C3D400000001 /* DockerSwiftUIApp.swift in Sources */,
+				A1B2C3D400000001 /* DockableApp.swift in Sources */,
 				A1B2C3D400000002 /* DockerContainer.swift in Sources */,
 				A1B2C3D400000003 /* DockerImage.swift in Sources */,
 				A1B2C3D400000004 /* DockerVolume.swift in Sources */,
@@ -460,7 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DockerSwiftUI/DockerSwiftUI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Dockable/Dockable.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -476,7 +476,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dockerswiftui.app;
+				PRODUCT_BUNDLE_IDENTIFIER = de.shyim.dockable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -488,7 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DockerSwiftUI/DockerSwiftUI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Dockable/Dockable.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -504,7 +504,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dockerswiftui.app;
+				PRODUCT_BUNDLE_IDENTIFIER = de.shyim.dockable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -514,7 +514,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1B2C3DA00000001 /* Build configuration list for PBXProject "DockerSwiftUI" */ = {
+		A1B2C3DA00000001 /* Build configuration list for PBXProject "Dockable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3DC00000001 /* Debug */,
@@ -523,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1B2C3DA00000003 /* Build configuration list for PBXNativeTarget "DockerSwiftUI" */ = {
+		A1B2C3DA00000003 /* Build configuration list for PBXNativeTarget "Dockable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3DC00000003 /* Debug */,

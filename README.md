@@ -1,4 +1,4 @@
-# Docker SwiftUI
+# Dockable
 
 A native macOS application for managing Docker containers, Compose stacks, images, volumes, and networks. Built with SwiftUI and Apple's `Network.framework` — no third-party networking dependencies.
 
@@ -39,7 +39,7 @@ make run
 Or open in Xcode:
 
 ```sh
-open DockerSwiftUI.xcodeproj
+open Dockable.xcodeproj
 ```
 
 Then build and run with ⌘R.
@@ -67,8 +67,8 @@ The app automatically detects your Docker socket by checking (in order):
 ## Architecture
 
 ```
-DockerSwiftUI/
-├── DockerSwiftUIApp.swift          # App entry point, menu bar extra
+Dockable/
+├── DockableApp.swift          # App entry point, menu bar extra
 ├── AppDelegate.swift               # Keeps app alive when window closes
 ├── Models/                         # Codable types for Docker API responses
 │   ├── DockerContainer.swift
