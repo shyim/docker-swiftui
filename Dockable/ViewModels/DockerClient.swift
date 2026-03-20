@@ -36,6 +36,36 @@ final class DockerClient {
         containers.filter(\.isRunning).count
     }
 
+    var imageIdsInUse: Set<String> {
+        Set(containers.map(\.imageID))
+    }
+
+    var networkIdsInUse: Set<String> {
+        var ids = Set<String>()
+        for container in containers {
+            guard let networks = container.networkSettings?.networks else { continue }
+            for (_, endpoint) in networks {
+                if let networkID = endpoint.networkID {
+                    ids.insert(networkID)
+                }
+            }
+        }
+        return ids
+    }
+
+    var volumeNamesInUse: Set<String> {
+        var names = Set<String>()
+        for container in containers {
+            guard let mounts = container.mounts else { continue }
+            for mount in mounts where mount.type == "volume" {
+                if let name = mount.name {
+                    names.insert(name)
+                }
+            }
+        }
+        return names
+    }
+
     // MARK: - Data Loading
 
     func loadAll() async {

@@ -2,8 +2,8 @@ import SwiftUI
 
 struct VolumeListView: View {
     @Environment(DockerClient.self) private var client
+    @Binding var selectedId: String?
     @State private var searchText = ""
-    @State private var selectedId: String?
 
     private var filteredVolumes: [DockerVolume] {
         client.volumes
@@ -15,17 +15,49 @@ struct VolumeListView: View {
             .sorted { $0.name < $1.name }
     }
 
+    private var inUseVolumes: [DockerVolume] {
+        let namesInUse = client.volumeNamesInUse
+        return filteredVolumes.filter { namesInUse.contains($0.name) }
+    }
+
+    private var unusedVolumes: [DockerVolume] {
+        let namesInUse = client.volumeNamesInUse
+        return filteredVolumes.filter { !namesInUse.contains($0.name) }
+    }
+
     var body: some View {
-        List(filteredVolumes, selection: $selectedId) { volume in
-            VolumeRowView(volume: volume)
-                .tag(volume.id)
-                .contextMenu {
-                    Button(role: .destructive) {
-                        Task { await client.removeVolume(volume.name) }
-                    } label: {
-                        Label("Remove", systemImage: "trash")
+        List(selection: $selectedId) {
+            if !inUseVolumes.isEmpty {
+                Section("In Use") {
+                    ForEach(inUseVolumes) { volume in
+                        VolumeRowView(volume: volume)
+                            .tag(volume.id)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    Task { await client.removeVolume(volume.name) }
+                                } label: {
+                                    Label("Remove", systemImage: "trash")
+                                }
+                            }
                     }
                 }
+            }
+
+            if !unusedVolumes.isEmpty {
+                Section("Unused") {
+                    ForEach(unusedVolumes) { volume in
+                        VolumeRowView(volume: volume)
+                            .tag(volume.id)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    Task { await client.removeVolume(volume.name) }
+                                } label: {
+                                    Label("Remove", systemImage: "trash")
+                                }
+                            }
+                    }
+                }
+            }
         }
         .listStyle(.inset)
         .searchable(text: $searchText, prompt: "Filter volumes...")

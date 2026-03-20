@@ -15,17 +15,49 @@ struct ImageListView: View {
             .sorted { $0.created > $1.created }
     }
 
+    private var inUseImages: [DockerImage] {
+        let idsInUse = client.imageIdsInUse
+        return filteredImages.filter { idsInUse.contains($0.id) }
+    }
+
+    private var unusedImages: [DockerImage] {
+        let idsInUse = client.imageIdsInUse
+        return filteredImages.filter { !idsInUse.contains($0.id) }
+    }
+
     var body: some View {
-        List(filteredImages, selection: $selectedId) { image in
-            ImageRowView(image: image)
-                .tag(image.id)
-                .contextMenu {
-                    Button(role: .destructive) {
-                        Task { await client.removeImage(image.id) }
-                    } label: {
-                        Label("Remove", systemImage: "trash")
+        List(selection: $selectedId) {
+            if !inUseImages.isEmpty {
+                Section("In Use") {
+                    ForEach(inUseImages) { image in
+                        ImageRowView(image: image)
+                            .tag(image.id)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    Task { await client.removeImage(image.id) }
+                                } label: {
+                                    Label("Remove", systemImage: "trash")
+                                }
+                            }
                     }
                 }
+            }
+
+            if !unusedImages.isEmpty {
+                Section("Unused") {
+                    ForEach(unusedImages) { image in
+                        ImageRowView(image: image)
+                            .tag(image.id)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    Task { await client.removeImage(image.id) }
+                                } label: {
+                                    Label("Remove", systemImage: "trash")
+                                }
+                            }
+                    }
+                }
+            }
         }
         .listStyle(.inset)
         .searchable(text: $searchText, prompt: "Filter images...")

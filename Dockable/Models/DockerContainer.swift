@@ -12,6 +12,23 @@ struct DockerContainer: Codable, Identifiable, Sendable, Hashable {
     let ports: [Port]
     let labels: [String: String]
     let mounts: [Mount]?
+    let networkSettings: NetworkSettings?
+
+    struct NetworkSettings: Codable, Sendable, Hashable {
+        let networks: [String: NetworkEndpoint]?
+
+        struct NetworkEndpoint: Codable, Sendable, Hashable {
+            let networkID: String?
+
+            enum CodingKeys: String, CodingKey {
+                case networkID = "NetworkID"
+            }
+        }
+
+        enum CodingKeys: String, CodingKey {
+            case networks = "Networks"
+        }
+    }
 
     struct Port: Codable, Sendable, Hashable {
         let ip: String?
@@ -85,6 +102,7 @@ struct DockerContainer: Codable, Identifiable, Sendable, Hashable {
         case ports = "Ports"
         case labels = "Labels"
         case mounts = "Mounts"
+        case networkSettings = "NetworkSettings"
     }
 
     func hash(into hasher: inout Hasher) {

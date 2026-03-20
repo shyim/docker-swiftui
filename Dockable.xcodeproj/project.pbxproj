@@ -38,6 +38,9 @@
 		A1B2C3D400000033 /* SpecttyTerminal in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3DF00000030 /* SpecttyTerminal */; };
 		A1B2C3D400000050 /* DockerImageInspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000050 /* DockerImageInspect.swift */; };
 		A1B2C3D400000051 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000051 /* ImageDetailView.swift */; };
+		A1B2C3D400000052 /* DetailComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000052 /* DetailComponents.swift */; };
+		A1B2C3D400000053 /* VolumeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000053 /* VolumeDetailView.swift */; };
+		A1B2C3D400000054 /* NetworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D500000054 /* NetworkDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		A1B2C3D500000032 /* ContainerConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerConsoleView.swift; sourceTree = "<group>"; };
 		A1B2C3D500000050 /* DockerImageInspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerImageInspect.swift; sourceTree = "<group>"; };
 		A1B2C3D500000051 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000052 /* DetailComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComponents.swift; sourceTree = "<group>"; };
+		A1B2C3D500000053 /* VolumeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D500000054 /* NetworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 			children = (
 				A1B2C3D50000000C /* ContentView.swift */,
 				A1B2C3D50000000D /* Sidebar.swift */,
+				A1B2C3D500000052 /* DetailComponents.swift */,
 				A1B2C3D700000008 /* Containers */,
 				A1B2C3D700000009 /* Compose */,
 				A1B2C3D70000000A /* Images */,
@@ -200,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B2C3D500000014 /* VolumeListView.swift */,
+				A1B2C3D500000053 /* VolumeDetailView.swift */,
 			);
 			path = Volumes;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B2C3D500000015 /* NetworkListView.swift */,
+				A1B2C3D500000054 /* NetworkDetailView.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -341,6 +350,9 @@
 				A1B2C3D400000032 /* ContainerConsoleView.swift in Sources */,
 				A1B2C3D400000050 /* DockerImageInspect.swift in Sources */,
 				A1B2C3D400000051 /* ImageDetailView.swift in Sources */,
+				A1B2C3D400000052 /* DetailComponents.swift in Sources */,
+				A1B2C3D400000053 /* VolumeDetailView.swift in Sources */,
+				A1B2C3D400000054 /* NetworkDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

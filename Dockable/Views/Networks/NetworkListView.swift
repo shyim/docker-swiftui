@@ -2,8 +2,8 @@ import SwiftUI
 
 struct NetworkListView: View {
     @Environment(DockerClient.self) private var client
+    @Binding var selectedId: String?
     @State private var searchText = ""
-    @State private var selectedId: String?
 
     private var filteredNetworks: [DockerNetwork] {
         client.networks
@@ -15,19 +15,53 @@ struct NetworkListView: View {
             .sorted { $0.name < $1.name }
     }
 
+    private var inUseNetworks: [DockerNetwork] {
+        let idsInUse = client.networkIdsInUse
+        return filteredNetworks.filter { idsInUse.contains($0.id) }
+    }
+
+    private var unusedNetworks: [DockerNetwork] {
+        let idsInUse = client.networkIdsInUse
+        return filteredNetworks.filter { !idsInUse.contains($0.id) }
+    }
+
     var body: some View {
-        List(filteredNetworks, selection: $selectedId) { network in
-            NetworkRowView(network: network)
-                .tag(network.id)
-                .contextMenu {
-                    if !network.isBuiltIn {
-                        Button(role: .destructive) {
-                            Task { await client.removeNetwork(network.id) }
-                        } label: {
-                            Label("Remove", systemImage: "trash")
-                        }
+        List(selection: $selectedId) {
+            if !inUseNetworks.isEmpty {
+                Section("In Use") {
+                    ForEach(inUseNetworks) { network in
+                        NetworkRowView(network: network)
+                            .tag(network.id)
+                            .contextMenu {
+                                if !network.isBuiltIn {
+                                    Button(role: .destructive) {
+                                        Task { await client.removeNetwork(network.id) }
+                                    } label: {
+                                        Label("Remove", systemImage: "trash")
+                                    }
+                                }
+                            }
                     }
                 }
+            }
+
+            if !unusedNetworks.isEmpty {
+                Section("Unused") {
+                    ForEach(unusedNetworks) { network in
+                        NetworkRowView(network: network)
+                            .tag(network.id)
+                            .contextMenu {
+                                if !network.isBuiltIn {
+                                    Button(role: .destructive) {
+                                        Task { await client.removeNetwork(network.id) }
+                                    } label: {
+                                        Label("Remove", systemImage: "trash")
+                                    }
+                                }
+                            }
+                    }
+                }
+            }
         }
         .listStyle(.inset)
         .searchable(text: $searchText, prompt: "Filter networks...")
