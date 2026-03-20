@@ -134,6 +134,10 @@ final class DockerClient {
 
     // MARK: - Image Actions
 
+    func inspectImage(_ id: String) async throws -> DockerImageInspect {
+        try await api.inspectImage(id: id)
+    }
+
     func removeImage(_ id: String, force: Bool = false) async {
         do {
             try await api.removeImage(id: id, force: force)

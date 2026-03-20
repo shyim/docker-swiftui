@@ -94,6 +94,13 @@ final class DockerAPI: Sendable {
         return try decode([DockerImage].self, from: response.body)
     }
 
+    func inspectImage(id: String) async throws -> DockerImageInspect {
+        let path = "\(apiVersion)/images/\(id)/json"
+        let response = try await socket.request(method: "GET", path: path)
+        try checkStatus(response)
+        return try decode(DockerImageInspect.self, from: response.body)
+    }
+
     func removeImage(id: String, force: Bool = false) async throws {
         let path = "\(apiVersion)/images/\(id)?force=\(force)"
         let response = try await socket.request(method: "DELETE", path: path)

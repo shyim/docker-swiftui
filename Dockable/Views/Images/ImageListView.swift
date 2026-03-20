@@ -2,8 +2,8 @@ import SwiftUI
 
 struct ImageListView: View {
     @Environment(DockerClient.self) private var client
+    @Binding var selectedId: String?
     @State private var searchText = ""
-    @State private var selectedId: String?
 
     private var filteredImages: [DockerImage] {
         client.images

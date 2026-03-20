@@ -4,6 +4,7 @@ struct ContentView: View {
     @Environment(DockerClient.self) private var client
     @State private var selectedSidebarItem: SidebarItem? = .containers
     @State private var selectedContainerId: String?
+    @State private var selectedImageId: String?
 
     var body: some View {
         NavigationSplitView {
@@ -14,7 +15,7 @@ struct ContentView: View {
                 case .containers:
                     ContainerListView(selectedId: $selectedContainerId)
                 case .images:
-                    ImageListView()
+                    ImageListView(selectedId: $selectedImageId)
                 case .volumes:
                     VolumeListView()
                 case .networks:
@@ -28,10 +29,13 @@ struct ContentView: View {
         } detail: {
             if selectedSidebarItem == .containers, let id = selectedContainerId {
                 ContainerDetailView(containerId: id)
+            } else if selectedSidebarItem == .images, let id = selectedImageId {
+                ImageDetailView(imageId: id)
             }
         }
         .onChange(of: selectedSidebarItem) {
             selectedContainerId = nil
+            selectedImageId = nil
         }
         .task {
             await client.loadAll()
