@@ -105,6 +105,22 @@ struct DockerContainer: Codable, Identifiable, Sendable, Hashable {
         case networkSettings = "NetworkSettings"
     }
 
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        names = try container.decode([String].self, forKey: .names)
+        image = try container.decode(String.self, forKey: .image)
+        imageID = try container.decode(String.self, forKey: .imageID)
+        command = try container.decode(String.self, forKey: .command)
+        created = try container.decode(Int.self, forKey: .created)
+        state = try container.decode(String.self, forKey: .state)
+        status = try container.decode(String.self, forKey: .status)
+        ports = try container.decodeIfPresent([Port].self, forKey: .ports) ?? []
+        labels = try container.decodeIfPresent([String: String].self, forKey: .labels) ?? [:]
+        mounts = try container.decodeIfPresent([Mount].self, forKey: .mounts)
+        networkSettings = try container.decodeIfPresent(NetworkSettings.self, forKey: .networkSettings)
+    }
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(state)
